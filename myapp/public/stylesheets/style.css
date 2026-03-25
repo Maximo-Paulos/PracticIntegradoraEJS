@@ -6,3 +6,39 @@ body {
 a {
   color: #00B7FF;
 }
+
+h3 {
+  color: #ffffff;
+  size: 10px;
+}
+
+title {
+  color: #00B7FF;
+}
+
+.caja {
+  width: 200px;
+  height: 200px;
+  background-color: #00B7FF;
+  margin: 0 auto;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #000;
+  background-color: rgb(229, 237, 244, 0.8);
+}
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 2px solid #000;
+  background-color: rgba(85, 85, 85, 0.8);
+}
