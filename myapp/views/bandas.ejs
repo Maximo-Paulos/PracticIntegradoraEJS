@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+
+    <h2>Listado</h2>
+    <ul>
+      <% bandas.forEach(function(banda) { %>
+        <li>
+          <a href="/bandas/<%= banda.id %>"><%= banda.nombre %></a>
+          (<%= banda.genero %>)
+        </li>
+      <% }) %>
+    </ul>
+
+    <h2>Filtrar por género</h2>
+    <ul>
+      <%
+        var generos = [];
+        bandas.forEach(function(b) {
+          if (generos.indexOf(b.genero) === -1) generos.push(b.genero);
+        });
+      %>
+      <% generos.forEach(function(g) { %>
+        <li>
+          <a href="/bandas/genero/<%= encodeURIComponent(g) %>"><%= g %></a>
+        </li>
+      <% }) %>
+    </ul>
+  </body>
+</html>

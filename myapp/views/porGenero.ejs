@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bandas por género</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <p><a href="/bandas">Volver al listado</a></p>
+
+    <h1>Bandas por género</h1>
+    <h2><%= genero %></h2>
+
+    <% if (bandas.length === 0) { %>
+      <p>No hay bandas para este género.</p>
+    <% } else { %>
+      <ul>
+        <% bandas.forEach(function(banda) { %>
+          <li>
+            <a href="/bandas/<%= banda.id %>"><%= banda.nombre %></a>
+            <br />
+            <img src="/<%= banda.cover %>" width="180" alt="<%= banda.nombre %>" />
+          </li>
+        <% }) %>
+      </ul>
+    <% } %>
+  </body>
+</html>
+
