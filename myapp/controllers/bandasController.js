@@ -5,16 +5,15 @@ function listadoBandas(req, res) {
 }
 
 function detalleBanda(req, res) {
-  const id = Number(req.params.id);
   let banda = null;
   for (let i = 0; i < bandas.length; i++) {
-    if (Number(bandas[i].id) === id) {
+    if (bandas[i].id == req.params.id) {
       banda = bandas[i];
       break;
     }
   }
 
-  if (!banda) return res.render('detalleBanda', { banda: null, id });
+  if (!banda) return res.render('detalleBanda', { banda: null, id: req.params.id });
 
   res.render('detalleBanda', { banda });
 }
